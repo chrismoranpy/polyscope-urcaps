@@ -26,6 +26,7 @@
 		<urcap.licenseType>Sample license</urcap.licenseType>
 		<urcap.compatibility.CB3>true</urcap.compatibility.CB3>
 		<urcap.compatibility.eSeries>true</urcap.compatibility.eSeries>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!--********************** END OF URCAP META DATA **********************-->
 		<!--********************************************************************-->
 
@@ -103,7 +104,7 @@
 					<instructions>
 						<!--********** DO NOT MODIFY THE ENTRIES OF THIS SECTION **********-->
 						<Bundle-Category>URCap</Bundle-Category>
-						<Bundle-Activator>com.ur.urcap.examples.ellipseswing.Activator</Bundle-Activator>
+						<Bundle-Activator>com.ur.urcap.Morans.Activator</Bundle-Activator>
 						<Bundle-Vendor>${urcap.vendor}</Bundle-Vendor>
 						<Bundle-ContactAddress>${urcap.contactAddress}</Bundle-ContactAddress>
 						<Bundle-Copyright>${urcap.copyright}</Bundle-Copyright>

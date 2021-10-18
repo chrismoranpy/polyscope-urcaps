@@ -87,7 +87,7 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 	private ImageIcon getErrorImage() {
 		try {
 			BufferedImage image = ImageIO
-					.read(getClass().getResource("/com/ur/urcap/examples/ellipseswing/warning-bigger.png"));
+					.read(getClass().getResource("/com/ur/urcap/warning-bigger.png"));
 			ImageIcon icon = new ImageIcon(image);
 			return icon;
 		} catch (IOException e) {

@@ -16,7 +16,7 @@ public class MoransProgramNodeService
 
 	@Override
 	public String getId() {
-		return "Ellipse";
+		return "Morans";
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class MoransProgramNodeService
 
 	@Override
 	public String getTitle(Locale locale) {
-		return "Ellipse";
+		return "Morans";
 	}
 
 	@Override

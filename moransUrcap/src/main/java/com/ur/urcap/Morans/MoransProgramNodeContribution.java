@@ -91,7 +91,7 @@ public class MoransProgramNodeContribution implements ProgramNodeContribution {
 
 	@Override
 	public String getTitle() {
-		return "Ellipse";
+		return "Morans";
 	}
 
 	@Override
@@ -175,7 +175,7 @@ public class MoransProgramNodeContribution implements ProgramNodeContribution {
 			configureWaypointNodes(positionParameters);
 			setDefined(true);
 		} catch (IllegalArgumentException e) {
-			updateError(new MoranState("Could not create ellipse movement<br>Try a different center point."));
+			updateError(new MoranState("Could not create spraying path<br>Try a different center point."));
 			setDefined(false);
 			resetWaypointNodes();
 		}
@@ -267,6 +267,7 @@ public class MoransProgramNodeContribution implements ProgramNodeContribution {
 		Feature feature = featureModel.getBaseFeature();
 		TCPSelection tcpSelection = moveNode.getTCPSelectionFactory().createActiveTCPSelection();
 
+		@SuppressWarnings("unchecked")//delete this line if wont compile after Friday
 		MovePConfigBuilder movePConfigBuilder = moveNode.getConfigBuilders().createMovePConfigBuilder()
 				.setToolSpeed(speed, ErrorHandler.AUTO_CORRECT)
 				.setToolAcceleration(acceleration, ErrorHandler.AUTO_CORRECT)
