@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -18,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
 
 public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgramNodeContribution> {
 
@@ -27,7 +29,14 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 	private JButton centerPointButton;
 	private JButton moveHereButton;
 	private JLabel errorLabel;
-
+	private JLabel boxLengthLabel; // BOX LENGTH LABEL VARIABLE
+	private JLabel boxWidthLabel; // BOX WIDTH LABEL VARIABLE
+	private JLabel boxHeightLabel; // BOX HEIGHT LABEL VARIABLE	
+	private JTextField boxLengthInput;
+	private JTextField boxWidthInput;
+	private JTextField boxHeightInput;
+	
+	
 	public MoransProgramNodeView(Style style) {
 		this.style = style;
 		this.errorIcon = getErrorImage();
@@ -38,28 +47,29 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
 		Box infoSection = createSection(BoxLayout.PAGE_AXIS);
-		infoSection.add(createInfo("This node creates an ellipse like movement around the selected center point."));
+		infoSection.add(createInfo("This node creates a spraygun toolpath around the selected center point."));
 		panel.add(infoSection);
 		panel.add(createVerticalSpacing());
-
+// START OF CENTER POINT BUTTON
 		Box buttonSection = createSection(BoxLayout.LINE_AXIS);
 		buttonSection.add(createHorizontalIndent());
 		this.centerPointButton = createButton("Set center point");
 		this.centerPointButton.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				provider.get().selectCenterPoint();
 
 			}
 		});
+		
 		this.centerPointButton.setPreferredSize(style.getButtonSize());
 		this.centerPointButton.setMinimumSize(style.getButtonSize());
 		this.centerPointButton.setMaximumSize(style.getButtonSize());
 		buttonSection.add(this.centerPointButton, FlowLayout.LEFT);
 		panel.add(buttonSection);
 		panel.add(createVerticalSpacing());
-
+// END OF CENTER POINT BUTTON		
+// START OF MOVE HERE BUTTON
 		buttonSection = createSection(BoxLayout.LINE_AXIS);
 		buttonSection.add(createHorizontalIndent());
 		this.moveHereButton = createButton("Move here");
@@ -69,13 +79,53 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 				provider.get().moveRobot();
 			}
 		});
+		
 		this.moveHereButton.setPreferredSize(style.getButtonSize());
 		this.moveHereButton.setMinimumSize(style.getButtonSize());
 		this.moveHereButton.setMaximumSize(style.getButtonSize());
 		buttonSection.add(this.moveHereButton, FlowLayout.LEFT);
 		panel.add(buttonSection);
 		panel.add(createVerticalSpacing());
+// END OF MOVE HERE BUTTON
+		
+// START OF LENGTH LABEL
+		Box userLabelSection = createSection(BoxLayout.LINE_AXIS);
+		userLabelSection.add(createHorizontalIndent());	
+			
 
+		this.boxLengthLabel = new JLabel();
+		this.boxLengthLabel.setText("Enter the length of box ");	
+		userLabelSection.add(this.boxLengthLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());
+		this.boxLengthInput = new JTextField();
+		this.boxLengthInput.setSize(150, 90);
+		Box userInputSection = createSection(BoxLayout.LINE_AXIS);
+		userInputSection.add(createHorizontalIndent());
+		userInputSection.add(boxLengthInput);
+		panel.add(userInputSection);
+		panel.add(createVerticalSpacing());		
+		
+// START OF WIDTH LABEL
+
+		userLabelSection.add(createHorizontalIndent());		
+
+		this.boxWidthLabel = new JLabel();
+		this.boxWidthLabel.setText("Enter the Width of box ");
+		userLabelSection.add(this.boxWidthLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());
+		
+// START OF HEIGHT LABEL
+
+		userLabelSection.add(createHorizontalIndent());		
+
+		this.boxHeightLabel = new JLabel();
+		this.boxHeightLabel.setText("Enter the Height of box ");
+		userLabelSection.add(this.boxHeightLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());		
+		
 		Box errorSection = createSection(BoxLayout.LINE_AXIS);
 		errorSection.add(createHorizontalIndent());
 		this.errorLabel = new JLabel();

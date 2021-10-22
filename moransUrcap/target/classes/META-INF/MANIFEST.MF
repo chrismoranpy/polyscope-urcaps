@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1634540772093
+Bnd-LastModified: 1634911432811
 Build-Jdk: 1.8.0_292
 Built-By: ur
 Bundle-Activator: com.ur.urcap.Morans.Activator
