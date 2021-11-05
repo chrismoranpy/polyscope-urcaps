@@ -91,7 +91,7 @@ public class MoransProgramNodeContribution implements ProgramNodeContribution {
 
 	@Override
 	public String getTitle() {
-		return "SpraygunToolpath";
+		return "Morans";
 	}
 
 	@Override
@@ -286,7 +286,7 @@ public class MoransProgramNodeContribution implements ProgramNodeContribution {
 	}
 
 	private static String createWaypointName(int waypointNumber) {
-		return "SpraygunPos" + waypointNumber;
+		return "EllipsePos" + waypointNumber;
 	}
 
 	private void lockTreeNodes() {

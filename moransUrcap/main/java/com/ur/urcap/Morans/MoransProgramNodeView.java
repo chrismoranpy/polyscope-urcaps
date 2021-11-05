@@ -50,84 +50,6 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 		infoSection.add(createInfo("This node creates a spraygun toolpath around the selected center point."));
 		panel.add(infoSection);
 		panel.add(createVerticalSpacing());
-		
-// START OF INPUT BOXES
-		
-		Box userInputSection = createSection(BoxLayout.LINE_AXIS);
-		userInputSection.add(createHorizontalIndent());	
-				
-		this.boxLengthInput = new JTextField();
-		this.boxLengthInput.setPreferredSize(style.getInputSize());
-		this.boxLengthInput.setMinimumSize(style.getInputSize());
-		this.boxLengthInput.setMaximumSize(style.getInputSize());
-		string inputLengthstring = this.boxLengthInput.getText();
-		double inputLengthVar = Double.parseDouble(inputLengthstring);
-				
-		this.boxWidthInput = new JTextField();
-		this.boxWidthInput.setPreferredSize(style.getInputSize());
-		this.boxWidthInput.setMinimumSize(style.getInputSize());
-		this.boxWidthInput.setMaximumSize(style.getInputSize());
-		string inputWidthstring = this.boxWidthInput.getText();
-		double inputWidthVar = Double.parseDouble(inputWidthstring);
-		
-    	this.boxHeightInput = new JTextField();
-    	this.boxHeightInput.setPreferredSize(style.getInputSize());
-		this.boxHeightInput.setMinimumSize(style.getInputSize());
-		this.boxHeightInput.setMaximumSize(style.getInputSize());
-		string inputHeightstring = this.boxHeightInput.getText();
-		double inputHeightVar 
-				
-		userInputSection.add(boxLengthInput);
-		panel.add(userInputSection);
-		panel.add(createVerticalSpacing());	
-				
-		userInputSection.add(createHorizontalIndent());	
-
-				
-		userInputSection.add(boxWidthInput);
-		panel.add(userInputSection);
-		panel.add(createVerticalSpacing());	
-				
-		userInputSection.add(createHorizontalIndent());	
-
-				
-		userInputSection.add(boxHeightInput);
-		panel.add(userInputSection);
-		panel.add(createVerticalSpacing());	
-				
-// START OF LENGTH LABEL
-		Box userLabelSection = createSection(BoxLayout.LINE_AXIS);
-		userLabelSection.add(createHorizontalIndent());	
-							
-
-		this.boxLengthLabel = new JLabel();
-		this.boxLengthLabel.setText("Enter the length of box ");	
-		userLabelSection.add(this.boxLengthLabel);
-		panel.add(userLabelSection);
-		panel.add(createVerticalSpacing());
-						
-			
-				
-// START OF WIDTH LABEL
-
-		userLabelSection.add(createHorizontalIndent());		
-
-		this.boxWidthLabel = new JLabel();
-		this.boxWidthLabel.setText("Enter the Width of box ");
-		userLabelSection.add(this.boxWidthLabel);
-		panel.add(userLabelSection);
-		panel.add(createVerticalSpacing());
-				
-// START OF HEIGHT LABEL
-
-		userLabelSection.add(createHorizontalIndent());		
-
-		this.boxHeightLabel = new JLabel();
-		this.boxHeightLabel.setText("  Enter the Height of box ");
-		userLabelSection.add(this.boxHeightLabel);
-		panel.add(userLabelSection);
-		panel.add(createVerticalSpacing());		
-		
 // START OF CENTER POINT BUTTON
 		Box buttonSection = createSection(BoxLayout.LINE_AXIS);
 		buttonSection.add(createHorizontalIndent());
@@ -166,7 +88,68 @@ public class MoransProgramNodeView implements SwingProgramNodeView<MoransProgram
 		panel.add(createVerticalSpacing());
 // END OF MOVE HERE BUTTON
 		
+// START OF INPUT BOXES
 		
+		this.boxLengthInput = new JTextField();
+		this.boxLengthInput.setPreferredSize(style.getInputSize());
+		this.boxLengthInput.setMinimumSize(style.getInputSize());
+		this.boxLengthInput.setMaximumSize(style.getInputSize());
+		
+		this.boxWidthInput = new JTextField();
+		this.boxWidthInput.setPreferredSize(style.getInputSize());
+		this.boxWidthInput.setMinimumSize(style.getInputSize());
+		this.boxWidthInput.setMaximumSize(style.getInputSize());
+		
+		this.boxHeightInput = new JTextField();
+		this.boxHeightInput.setPreferredSize(style.getInputSize());
+		this.boxHeightInput.setMinimumSize(style.getInputSize());
+		this.boxHeightInput.setMaximumSize(style.getInputSize());
+		
+		userInputSection.add(boxLengthInput);
+		panel.add(userInputSection);
+		panel.add(createVerticalSpacing());	
+		
+		userInputSection.add(boxWidthInput);
+		panel.add(userInputSection);
+		panel.add(createVerticalSpacing());	
+		
+		userInputSection.add(boxHeightInput);
+		panel.add(userInputSection);
+		panel.add(createVerticalSpacing());	
+		
+// START OF LENGTH LABEL
+		Box userLabelSection = createSection(BoxLayout.LINE_AXIS);
+		userLabelSection.add(createHorizontalIndent());	
+					
+
+		this.boxLengthLabel = new JLabel();
+		this.boxLengthLabel.setText("Enter the length of box ");	
+		userLabelSection.add(this.boxLengthLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());
+				
+		Box userInputSection = createSection(BoxLayout.LINE_AXIS);
+		userInputSection.add(createHorizontalIndent());		
+		
+// START OF WIDTH LABEL
+
+		userLabelSection.add(createHorizontalIndent());		
+
+		this.boxWidthLabel = new JLabel();
+		this.boxWidthLabel.setText("Enter the Width of box ");
+		userLabelSection.add(this.boxWidthLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());
+		
+// START OF HEIGHT LABEL
+
+		userLabelSection.add(createHorizontalIndent());		
+
+		this.boxHeightLabel = new JLabel();
+		this.boxHeightLabel.setText("Enter the Height of box ");
+		userLabelSection.add(this.boxHeightLabel);
+		panel.add(userLabelSection);
+		panel.add(createVerticalSpacing());		
 		
 		Box errorSection = createSection(BoxLayout.LINE_AXIS);
 		errorSection.add(createHorizontalIndent());

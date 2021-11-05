@@ -2,12 +2,12 @@ package com.ur.urcap.Morans;
 
 import java.awt.Dimension;
 
-public class V3Style extends Style {
+public class V5Style extends Style {
 
 	private static final int VERTICAL_SPACING = 10;
-	private static final int HORIZONTAL_INDENT = 20;
-	private static final Dimension BUTTON_SIZE = new Dimension(190, 30);
-	private static final Dimension INPUT_SIZE = new Dimension(150, 30);
+	private static final int HORIZONTAL_INDENT = 50;
+	private static final Dimension BUTTON_SIZE = new Dimension(190, 40);
+	private static final Dimension INPUT_SIZE = new Dimension(150, 30)
 
 	@Override
 	public int getVerticalSpacing() {
@@ -19,7 +19,8 @@ public class V3Style extends Style {
 		return HORIZONTAL_INDENT;
 	}
 
-	public Dimension getButtonSize(){
+	@Override
+	public Dimension getButtonSize() {
 		return BUTTON_SIZE;
 	}
 	

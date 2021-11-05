@@ -7,7 +7,7 @@ public class V3Style extends Style {
 	private static final int VERTICAL_SPACING = 10;
 	private static final int HORIZONTAL_INDENT = 20;
 	private static final Dimension BUTTON_SIZE = new Dimension(190, 30);
-	private static final Dimension INPUT_SIZE = new Dimension(150, 30);
+	private static final Dimension INPUT_SIZE = new Dimension(50, 30);
 
 	@Override
 	public int getVerticalSpacing() {
